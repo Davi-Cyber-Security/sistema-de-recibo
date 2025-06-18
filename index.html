@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="Recibo - Casa da Construção">
+    <meta property="og:description" content="Sistema Web em formato de Recibo - Casa da Construção">
+    <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/3734/3734681.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://recibo-one.vercel.app/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/iconeSite.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <title>RECIBO</title>
+</head>
+<body>
+    <header style="color: white; position: relative;">
+    <a href="" style="z-index: 2;" target="_blank"><img src="img/logo.png" alt="Logo do inicio" class="img logo" style="z-index: 2;"></a>
+        <h1 style="z-index: 2;">Bem-Vindo(a)! </h1>
+        <p style="z-index: 2;">Hoje dia <a id="data"></a> <br><a id="temperaTura"></a></p>
+    </header>
+    <main>
+        <h1 class="mensagems">INFELIZMENTE NÃO HÁ SUPORTE PARA TELAS MENORES (POR ENQUANTO)   :D</h1>
+        <section id="formulario">
+
+                <form class="info">
+
+                    <fieldset>
+                        <legend>DADOS PRINCIPAIS</legend>
+                        <div class="flex-a">
+                        <div class="regulando">
+                        <input type="text" placeholder="Digite o valor" required id="valorInput">
+                        <label>Digite o valor</label> 
+                    </div>
+                    <p>Valor digitado: <a id="valorDigitado"></a></p> 
+                        <br> 
+                        <div class="regulando">
+                        <input type="text" placeholder="Setenta e um reais e cinquenta centavos" id="valorExtenso" required>
+                        <label>Valor digitado em extenso</label> <br>
+                        </div> <div class="regulando">
+                        <input type="text" placeholder="Digite o nome completo" required id="InputNomeCompleto">
+                        <label>Digite o nome completo</label>
+                        </div> <div class="regulando">
+                        <input type="text" placeholder="Digite o CPF" id="cpf" maxlength="14" required>
+                        <label>Digite o CPF</label> </div>
+                        </div>
+                        <div class="regulando">
+                        <input type="text" placeholder="Ex: Pagamento de devolução" id="referente" required list="referenct">
+                        <label>Digite a referência</label> 
+                        <datalist id="referenct">
+                            <option value="pagamento de devolução">
+                        </datalist>
+                    </div>
+                        </div>
+                    </fieldset>
+                    <br> <br>
+                    <fieldset>
+                        <legend>DADOS OPCIONAIS</legend>
+                        <br>
+                        <div class="flex-a">
+                        <div class="regulando">
+                        <input type="text" placeholder="Adicione o nome da empresa" id="inputEmpresa">
+                        <label>Digite o nome da empresa</label> </div> 
+                        <div class="regulando">
+                        <input type="text" placeholder="Adicione o nome da empresa" id="inputCNPJ" maxlength="14" max="14">
+                        <label>Digite o CNPJ da empresa</label>
+                        </div>
+                        <div class="regulando">
+                        <input type="text" placeholder="Adicione o endereço da empresa" id="inputEndereco">
+                        <label>Digite o endereço</label>
+                        </div>
+                        </div>
+                    </fieldset>
+                    <button type="button" id="reflesh">Resetar</button>
+                    <button type="button" id="imprimir">Imprimir</button>
+                </form>
+        </section>
+        <br><br>
+        <section class="espaceamento">
+            <div id="salvarAqui">
+            <div class="a-a">
+                <div class="cabecalho">
+                <h1>RECIBO</h1> 
+                <p>ID: <a id="idValor">5584</a></p>
+                <p>VALOR: <a id="valor">R$ 71,50</a></p>
+                </div>
+            <div class="a-b">
+                <div class="empresa flex">
+                    <p>Recebi da empresa: </p>
+                    <p id="nomeEmpresa">DAVI SCRIPT</p>
+                    <p>CNPJ <a id="cnpj">00.000.000/0000-00</a></p>
+                </div>
+                <div class="endereco flex">
+                    <p>Endereço:</p>
+                    <p><a id="endereco">RUA FICTÍCIA, 994, ST FICTÍCIA, RIO VERDE-GO</a></p>
+                </div>
+                <div class="importancia flex">
+                    <p>A importância de: </p>
+                    <p><a id="valorI">R$ 71,50</a> (<a id="descritivo">setenta e um reais e cinquenta centavos</a>).</p>
+                </div>
+                <div class="referente flex">
+                    <p>Referente a: <a id="referenteE">Pagamento de devolução</a></p>
+                </div>
+                <br>
+                <div class="nome flex">
+                    <p>Nome: <a id="nome">Fulano de tal</a></p>
+                    <p>CPF: <a id="cpfResult">000.000.000-00</a></p>
+                </div>
+                <br><br>
+                <div class="assinatura">
+                    <p><a id="dataLong"></a></p>
+                    <div class="linha"></div>
+                    <p class="align-center">Assinatura</p>
+                </div>
+            </div>
+            </div>
+            </div>
+            <br><br>
+        </section>
+
+        <footer>
+            <h3>Sytem: RECIBO</h3>
+        <a href="https://lojascasadaconstrucao.com.br/" target="_blank"><img src="img/logo.png" alt="Logo final" class="img logo" style="z-index: 2;"></a>
+            <p style="font-weight: bold;">DESENVOLVIDO POR <a style="color: white;" href="https://www.instagram.com/davipv_ofc/" target="_blank">< DaviScript /> </a></p>
+        </footer>
+    </main>
+
+
+
+    <script src="js/index.js"></script>
+</body>
+</html>

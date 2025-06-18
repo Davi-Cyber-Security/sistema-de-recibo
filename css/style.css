@@ -1,0 +1,245 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@media (min-width: 700px)  {
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+header{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+    font-family: sans-serif;
+    background-image: url('1.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover; 
+}
+header::before{
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* ajuste a opacidade aqui */
+  z-index: 1; /* coloca a camada atrás do conteúdo */
+}
+.logo{
+    width: 219px;
+    height: 219px;
+    transition: .3s;
+}
+.logo:hover{
+    transform: scale(1.1);
+    transition: .3s;
+}
+
+
+
+/*Configurações no main*/
+
+form{
+    margin: 5px;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 15px;
+    position: relative;
+    font-family: sans-serif;
+}
+input{
+    width: 450px;
+    padding: 5px;
+    border: 2px solid #999999;
+    border-radius: 8px;
+    outline: none;
+}
+input:focus{
+    border: 2px solid rgb(168, 116, 168);
+}
+input:hover{
+    border: 2px solid rgb(168, 116, 168);
+    transition: .3s;
+}
+#valorInput{
+    width: 450px;
+}
+textarea{
+    width: 100%;
+    max-width: 460px;
+    align-items: center;
+    text-align: center;
+}
+
+fieldset{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    /* background: linear-gradient(145deg, #332ba0, #7263c2); */
+}
+/* legend{
+    font-weight: bold;
+} */
+.flex-a{
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+button{
+    text-align: center;
+    align-items: center;
+    margin-top: 5px;
+    padding: 25px;
+}
+
+.regulando{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.espaceamento{
+    padding: 8px;
+}
+.a-a{
+    padding: 15px;
+    background-color: grey;
+    border: 3px solid black;
+}
+
+
+.cabecalho{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.a-b{
+    align-items: center;
+    background-color: transparent;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    padding: 3px 0 3px 0;
+    background-color: white;
+    padding: 8px;
+}
+
+.assinatura{
+    height: 80px;
+    border: 1px solid black;
+    align-items: center;
+    text-align: center;
+    padding: 15px 0 15px 0;
+    background-color: white;
+    position: relative;
+}
+#dataLong{
+    position: absolute;
+    right: 18px;
+}
+.linha {
+  width: 700px;
+  height: 2px;
+  background-color: black;
+  margin: 30px auto; /* centraliza horizontalmente */
+}
+.align-center{
+    position: absolute;
+    bottom: 5px;
+    text-align: center;
+    left: 46%;
+}
+
+
+@media print{
+    form{
+        display: none;
+    }
+    header{
+        display: none;
+    }
+    .a-a{
+    padding: 15px;
+    background-color: grey;
+    border: 3px solid black;
+}
+
+footer{
+        display: none;
+    }
+
+.linha {
+    width: 500px;
+    height: 2px;
+    border: 1px solid black;
+    margin: 38px auto; /* substitui left */
+    position: static; /* garante que ela fique no fluxo */
+  }
+
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}
+.mensagems{
+    display: none;
+}
+}
+
+@media (max-width: 787px){
+    #formulario{
+        display: none;
+    }
+    footer{
+        display: none;
+    }
+    header{
+        display: none;
+    }
+}
+
+@media (max-width: 700px){
+        #formulario{
+        display: none;
+    }
+    footer{
+        display: none;
+    }
+    header{
+        display: none;
+    }
+    .mensagems{
+    display: block;
+}
+.espaceamento{
+    display: none;
+}
+}
